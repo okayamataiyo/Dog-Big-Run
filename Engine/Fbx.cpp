@@ -271,15 +271,15 @@ void Fbx::InitMaterial(fbxsdk::FbxNode* pNode)
 //テクスチャをロード
 void Fbx::Draw(Transform& transform)
 {
-    for (int i = 0; i < 1; i++)
+    Direct3D::SetShader(SHADER_TOONOUTLINE);
+
+    transform.Calclation();//トランスフォームを計算
+
+    for (int j = 0; j < 2; j++)
     {
-        if (i == 0)Direct3D::SetShader(SHADER_TOONOUTLINE);
-        
-        if (i == 1)Direct3D::SetShader(SHADER_TOON);
 
-        transform.Calclation();//トランスフォームを計算
-
-        for (int i = 0; i < materialCount_; i++) {
+        for (int i = 0; i < materialCount_; i++) 
+        {
 
             //コンスタントバッファに情報を渡す
             CONSTANT_BUFFER_MODEL cb;
@@ -351,7 +351,7 @@ void Fbx::Draw(Transform& transform)
 
             //描画
             Direct3D::pContext_->DrawIndexed(indexCount_[i], 0, 0);
-
+            Direct3D::SetShader(SHADER_TOON);
         }
     }
 }
