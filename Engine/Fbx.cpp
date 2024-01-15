@@ -274,7 +274,7 @@ void Fbx::InitMaterial(fbxsdk::FbxNode* pNode)
 //テクスチャをロード
 void Fbx::Draw(Transform& transform)
 {
-    Direct3D::SetShader(SHADER_TOONOUTLINE);
+    Direct3D::SetShader(SHADER_3D);
 
     transform.Calclation();//トランスフォームを計算
 
@@ -358,7 +358,8 @@ void Fbx::Draw(Transform& transform)
             //描画
             Direct3D::pContext_->DrawIndexed(indexCount_[i], 0, 0);
         }
-        Direct3D::SetShader(SHADER_TOON);
+        //トゥーンシェーダーを使用する時に使う
+        //Direct3D::SetShader(SHADER_TOON);
     }
 }
 

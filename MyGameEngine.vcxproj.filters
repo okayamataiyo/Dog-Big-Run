@@ -67,12 +67,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Simple3D.hlsl" />
-    <FxCompile Include="Simple2D.hlsl" />
-    <FxCompile Include="Toon.hlsl" />
-    <FxCompile Include="ToonOutLine.hlsl" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -121,5 +115,11 @@
     <ClInclude Include="Engine\Sprite.h">
       <Filter>ソース ファイル\Engine</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Assets\Shader\Simple2D.hlsl" />
+    <FxCompile Include="Assets\Shader\Simple3D.hlsl" />
+    <FxCompile Include="Assets\Shader\Toon.hlsl" />
+    <FxCompile Include="Assets\Shader\ToonOutLine.hlsl" />
   </ItemGroup>
 </Project>
